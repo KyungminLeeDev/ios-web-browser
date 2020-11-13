@@ -63,8 +63,8 @@ final class ViewController: UIViewController {
     func addHttpsFront(of url: String) -> String {
         return "https://" + url
     }
-    
-	func checkFront(of url: String?) -> Bool {
+
+    func checkFront(of url: String?) -> Bool {
         let urlRegex = "((http|https)://)[\\S]+"
         
         return NSPredicate(format: "SELF MATCHES %@", urlRegex).evaluate(with: url)
