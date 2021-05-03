@@ -2,7 +2,7 @@
 
 # iOS Web Browser
 - Webkit으로 구현한 웹 브라우저 앱
-- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322)
+- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [팀 그라운드 룰](./GroundRule.md)
 - 진척도: `😀😀😀😀😰`
 - 진행 기간: 2020.11.09~15 (1주)
 - 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
@@ -17,14 +17,11 @@
 
 ### 입력한 주소로 이동
 
-### 유효한 주소로만 이동
+### 주소가 유효하지 않으면 Alert 표시
 
-### 자동으로 주소에 "https://" 붙이기
+### 주소 앞에 "http://", "https://" 붙여서 유효하다면, 붙인 주소로 이동
 
 ### 앞으로 가기, 뒤로 가기, 새로고침
-
-## 키워드
-
 
 ## 구현 내용
 
