@@ -1,8 +1,8 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FKyungminLeeDev%2FiOS_Web_Browser&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-# iOS Web Browser
+# 웹 브라우저
 - Webkit으로 구현한 웹 브라우저 앱
-- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [팀 그라운드 룰](./GroundRule.md)
+- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md)
 - 진척도: `😀😀😀😀😰`
 - 진행 기간: 2020.11.09~15 (1주)
 - 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
