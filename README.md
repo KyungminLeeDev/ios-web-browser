@@ -25,6 +25,12 @@
 
 ### 앞으로 가기, 뒤로 가기, 새로고침
 
+
+| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | https:// 자동으로 붙이기 | 앞/뒤로 가기, 새로고침 | 
+| - | - | - | - |
+| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
+
+
 ## 구현 내용
 
 - 화면 구성
