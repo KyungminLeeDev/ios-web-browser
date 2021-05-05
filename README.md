@@ -15,18 +15,7 @@
 
 ## 기능
 
-### 입력한 주소로 이동
-
-<img src = "./README_Resources/WebBrowser_MoveToURL.gif" width="40%">
-
-### 주소가 유효하지 않으면 Alert 표시
-
-### 주소 앞에 "http://", "https://" 붙여서 유효하다면, 붙인 주소로 이동
-
-### 앞으로 가기, 뒤로 가기, 새로고침
-
-
-| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | https:// 자동으로 붙이기 | 앞/뒤로 가기, 새로고침 | 
+| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로고침 | 
 | - | - | - | - |
 | ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
 
