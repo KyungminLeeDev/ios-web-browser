@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56B452CC263EFA6C00345B4A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 56B452CB263EFA6C00345B4A /* README.md */; };
-		56B452CF263EFAB900345B4A /* GroundRule.md in Resources */ = {isa = PBXBuildFile; fileRef = 56B452CE263EFAB900345B4A /* GroundRule.md */; };
 		C7ABA119254EB0CA00B2367D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABA118254EB0CA00B2367D /* AppDelegate.swift */; };
 		C7ABA11B254EB0CA00B2367D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABA11A254EB0CA00B2367D /* SceneDelegate.swift */; };
 		C7ABA11D254EB0CA00B2367D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABA11C254EB0CA00B2367D /* ViewController.swift */; };
@@ -18,8 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		56B452CB263EFA6C00345B4A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		56B452CE263EFAB900345B4A /* GroundRule.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = GroundRule.md; path = ../GroundRule.md; sourceTree = "<group>"; };
 		C7ABA115254EB0CA00B2367D /* WebBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7ABA118254EB0CA00B2367D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7ABA11A254EB0CA00B2367D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,8 +40,6 @@
 		C7ABA10C254EB0CA00B2367D = {
 			isa = PBXGroup;
 			children = (
-				56B452CB263EFA6C00345B4A /* README.md */,
-				56B452CE263EFAB900345B4A /* GroundRule.md */,
 				C7ABA117254EB0CA00B2367D /* WebBrowser */,
 				C7ABA116254EB0CA00B2367D /* Products */,
 			);
@@ -130,10 +124,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B452CF263EFAB900345B4A /* GroundRule.md in Resources */,
 				C7ABA125254EB0CA00B2367D /* LaunchScreen.storyboard in Resources */,
 				C7ABA122254EB0CA00B2367D /* Assets.xcassets in Resources */,
-				56B452CC263EFA6C00345B4A /* README.md in Resources */,
 				C7ABA120254EB0CA00B2367D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
