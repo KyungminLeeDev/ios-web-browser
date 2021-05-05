@@ -17,7 +17,7 @@
 
 ### 입력한 주소로 이동
 
-![MoveToURL GIF](https://github.com/KyungminLeeDev/ios-web-browser/blob/7655edf94f99c2b61a14ace279574c08d0ccd854/README_Resources/WebBrowser_MoveToURL.gif){: width="10%" height="10%"}
+<img src = "./README_Resources/WebBrowser_MoveToURL.gif" width="40%">
 
 ### 주소가 유효하지 않으면 Alert 표시
 
