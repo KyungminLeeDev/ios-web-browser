@@ -3,7 +3,6 @@
 # 웹 브라우저
 - Webkit으로 구현한 웹 브라우저 앱
 - 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md)
-- 진척도: `😀😀😀😀😰`
 - 진행 기간: 2020.11.09~15 (1주)
 - 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
 
