@@ -15,9 +15,11 @@
 
 ## 기능
 
-| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로 고침 | 
-| - | - | - | - |
-| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
+| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 
+| :----------------: | :----------------------: |
+| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) |
+| **주소에 "https://" 붙이기** | **앞/뒤로 가기, 새로 고침** | 
+| ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
 
 
 ## 구현 내용
