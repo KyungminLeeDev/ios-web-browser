@@ -12,14 +12,14 @@
 
 ## 1. 개요
 
-### 1-1. Webkit으로 구현한 웹 브라우저 앱
-### 1-2. 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md)
-### 1-3. 진행 기간: 2020.11.09~15 (1주)
-### 1-4. 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
-### 105. 기능
-| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로 고침 | 
-| :----------------: | :----------------------: | :----------------------: | :---------------------: |
-| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
+- Webkit으로 구현한 웹 브라우저 앱
+- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md)
+- 진행 기간: 2020.11.09~15 (1주)
+- 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
+- 기능
+    | 1. 입력한 주소로 이동 | 2. 잘못된 주소는 Alert 표시 | 3. 주소에 "https://" 붙이기 | 4. 앞/뒤로 가기, 새로 고침 | 
+    | :----------------: | :----------------------: | :----------------------: | :---------------------: |
+    | ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
 
 
 ## 구현 내용
