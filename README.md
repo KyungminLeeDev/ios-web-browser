@@ -1,17 +1,22 @@
+# 웹 브라우저
+<!-- 뱃지 라인 -->
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FKyungminLeeDev%2FiOS_Web_Browser&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-# 웹 브라우저
+## 목차
+
+1. [개요](#개요)
+2. [기능](#기능)
+3. [구현 내용](#구현-내용)
+4. [배운 내용](#배운-내용)
+5. [고민한 내용](#고민한-내용)
+6. [개선하고 싶은 내용](#개선하고-싶은-내용)
+
+## 1. 개요
+
 - Webkit으로 구현한 웹 브라우저 앱
 - 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md)
 - 진행 기간: 2020.11.09~15 (1주)
 - 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
-
-## Index
-- [기능](#기능)
-- [구현 내용](#구현-내용)
-- [배운 내용](#배운-내용)
-- [고민한 내용](#고민한-내용)
-- [개선하고 싶은 내용](#개선하고-싶은-내용)
 
 ## 기능
 
@@ -116,3 +121,4 @@
 - 뒤로 가기, 앞으로 가기, 새로 고침 기능을 Webkit 메서드를 사용하지 않고 구현해보기
 - 상/하단의 Bar가 항상 보이고 있어서 웹 뷰 영역이 비좁아 보인다. 사파리 앱처럼 아래로 스크롤 시에 상/하단 Bar를 최소화하고, 위로 스크롤 시에 다시 보이게 하는 기능을 구현 해 보기
 - 에러 핸들링 Error 프로토콜 사용하기, 에러 핸들링 분리하기
+- 다크모드 대응
