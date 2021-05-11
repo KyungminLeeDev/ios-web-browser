@@ -1,30 +1,25 @@
-# 웹 브라우저
+# 웹 브라우저 앱
 <!-- 뱃지 라인 -->
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FKyungminLeeDev%2FiOS_Web_Browser&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 ## 목차
 
-1. [개요](#개요)
-2. [기능](#기능)
-3. [구현 내용](#구현-내용)
-4. [배운 내용](#배운-내용)
-5. [고민한 내용](#고민한-내용)
-6. [개선하고 싶은 내용](#개선하고-싶은-내용)
+1. [개요](#1-개요)
+2. [구현 내용](#구현-내용)
+3. [배운 내용](#배운-내용)
+4. [고민한 내용](#고민한-내용)
+5. [개선하고 싶은 내용](#개선하고-싶은-내용)
 
 ## 1. 개요
 
-- Webkit으로 구현한 웹 브라우저 앱
-- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md)
-- 진행 기간: 2020.11.09~15 (1주)
-- 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
-
-## 기능
-
-| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 
-| :----------------: | :----------------------: |
-| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) |
-| **주소에 "https://" 붙이기** | **앞/뒤로 가기, 새로 고침** | 
-| ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
+### 1-1. Webkit으로 구현한 웹 브라우저 앱
+### 1-2. 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md)
+### 1-3. 진행 기간: 2020.11.09~15 (1주)
+### 1-4. 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
+### 105. 기능
+| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로 고침 | 
+| :----------------: | :----------------------: | :----------------------: | :---------------------: |
+| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
 
 
 ## 구현 내용
