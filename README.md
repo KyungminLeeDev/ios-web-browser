@@ -17,6 +17,7 @@
 - 진행 기간: 2020.11.09~15 (1주)
 - 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
 - 기능
+
 | 1. 입력한 주소로 이동 | 2. 잘못된 주소는 Alert 표시 | 3. 주소에 "https://" 붙이기 | 4. 앞/뒤로 가기, 새로 고침 | 
 | :----------------: | :----------------------: | :----------------------: | :---------------------: |
 | ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
