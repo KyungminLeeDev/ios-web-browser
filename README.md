@@ -22,6 +22,7 @@
 | :----------------: | :----------------------: | :----------------------: | :---------------------: |
 | ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
 
+<br>
 [👆목차로 가기](#목차)
 <br><br><br>
 
@@ -61,12 +62,10 @@
     }
     ~~~
 2. 이 생성자는 string이 유효하지 않다면, nil을 반환한다. 이것을 활용하면 입력한 주소의 유효성을 검증할 수 있다.
-    > Developer Document > URL > init(string:)
+    > **Developer Document > URL > init(string:)**  
     > This initializer returns nil if the string doesn’t represent a valid URL. For example, an empty string or one containing characters that are illegal in a URL produces nil.
 
-
-
-
+<br>
 [👆목차로 가기](#목차)
 <br><br><br>
 
@@ -123,6 +122,7 @@
     - Alert 사용은 꼭 필요할 때만
     - H.I.G 문서를 읽어봐야 한다. [Feedback - Alert관련 내용](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/feedback/)
 
+<br>
 [👆목차로 가기](#목차)
 <br><br><br>
 
@@ -147,6 +147,7 @@
     - 프로젝트의 `ViewController`에서만 사용할 것이므로 이곳에 정의
     - 이 경우 말고, 기능을 재사용할 방법은 extension뿐 아니라, 전용 객체를 만들어 사용하면 될 것이다.
 
+<br>
 [👆목차로 가기](#목차)
 <br><br><br>
 
