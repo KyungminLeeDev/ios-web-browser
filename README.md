@@ -5,7 +5,7 @@
 ## 목차
 
 1. [개요](#1-개요)
-2. [구현 내용](#구현-내용)
+2. [구현 내용](#2-구현-내용)
 3. [배운 내용](#배운-내용)
 4. [고민한 내용](#고민한-내용)
 5. [개선하고 싶은 내용](#개선하고-싶은-내용)
@@ -18,27 +18,38 @@
 - 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
 - 기능
 
-| 1. 입력한 주소로 이동 | 2. 잘못된 주소는 Alert 표시 | 3. 주소에 "https://" 붙이기 | 4. 앞/뒤로 가기, 새로 고침 | 
+| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로 고침 | 
 | :----------------: | :----------------------: | :----------------------: | :---------------------: |
 | ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
 
-[👆 목차로 가기](#목차)
+[👆목차로 가기](#목차)
 <br><br><br>
 
-## 구현 내용
+## 2. 기능 구현
 
-- 화면 구성
-    - 주소 입력 필드
-    - 웹 뷰
-    - 주소입력 필드
-    - 툴 바
-        - 바 버튼 아이템
+- [`UITextField`로 텍스트 입력받기](#UITextField로-텍스트-입력받기)
+- 입력한 주소로 이동
 - 앞으로 가기, 뒤로 가기 버튼
 - Alert 표시
 - 정규식으로 주소에 https 포함했는지 검사
 - 주소 입력 필드에 현재 URL 표시 (델리게이트)
 - 주소로 이동 실패한 경우 에러 표시 (델리게이트)
 
+### `UITextField`로 텍스트 입력받기
+
+1. `ViewController`에 `@IBOutlet` 프로퍼티로 연결
+~~~swift
+class ViewController: UIViewController {
+    @IBOutlet weak var urlTextField: UITextField!
+}
+~~~
+2. 이제 `UITextField`를 터치하면 글자를 입력할 수 있다
+3. 입력받은 글자는 `UITextField`의 `text`프로퍼티로 접근하여 가져올 수 있다. `Optional`이므로 안전하게 `Optional Unwrapping`하여 사용하자
+~~~swift
+if let url = urlTextField.text {
+    // do something
+}
+~~~
 
 ## 배운 내용
 
@@ -91,7 +102,7 @@
     - Alert 사용은 꼭 필요할 때만
     - H.I.G 문서를 읽어봐야 한다. [Feedback - Alert관련 내용](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/feedback/)
 
-[👆 목차로 가기](#목차)
+[👆목차로 가기](#목차)
 <br><br><br>
 
 
@@ -115,7 +126,7 @@
     - 프로젝트의 `ViewController`에서만 사용할 것이므로 이곳에 정의
     - 이 경우 말고, 기능을 재사용할 방법은 extension뿐 아니라, 전용 객체를 만들어 사용하면 될 것이다.
 
-[👆 목차로 가기](#목차)
+[👆목차로 가기](#목차)
 <br><br><br>
 
 
