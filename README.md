@@ -25,9 +25,10 @@
 [👆목차로 가기](#목차)
 <br><br><br>
 
-## 2. 기능 구현
+## 2. 기능 구현 (학습한 내용, 새로 배운 내용)
 
 - [UITextField로 텍스트 입력받기](#UITextField로-텍스트-입력받기)
+- [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
 - 입력한 주소로 이동
 - 앞으로 가기, 뒤로 가기 버튼
 - Alert 표시
@@ -46,10 +47,30 @@
 2. 이제 `UITextField`를 터치하면 글자를 입력할 수 있다
 3. 입력받은 글자는 `UITextField`의 `text`프로퍼티로 접근하여 가져올 수 있다. `Optional`이므로 안전하게 `Optional Unwrapping`하여 사용하자
     ~~~swift
-    if let url = urlTextField.text {
-        // do something
+    if let urlText = urlTextField.text {
+        // use urlText
     }
     ~~~
+
+### String을 URL 타입으로 변환하기
+
+1. `URL`의 생성자 `init(string:)`으로 String 텍스트를 URL타입으로 생성한다. 
+    ~~~swift
+    if let url = URL(string: urlText) {
+        // use url
+    }
+    ~~~
+2. 이 생성자는 string이 유효하지 않다면, nil을 반환한다. 이것을 활용하면 입력한 주소의 유효성을 검증할 수 있다.
+    > Developer Document > URL > init(string:)
+    > This initializer returns nil if the string doesn’t represent a valid URL. For example, an empty string or one containing characters that are illegal in a URL produces nil.
+
+
+
+
+[👆목차로 가기](#목차)
+<br><br><br>
+
+
 
 ## 배운 내용
 
