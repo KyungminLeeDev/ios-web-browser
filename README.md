@@ -27,7 +27,7 @@
 
 ## 2. 기능 구현
 
-- [`UITextField`로 텍스트 입력받기](#UITextField로-텍스트-입력받기)
+- [UITextField로 텍스트 입력받기](#UITextField로-텍스트-입력받기)
 - 입력한 주소로 이동
 - 앞으로 가기, 뒤로 가기 버튼
 - Alert 표시
@@ -35,21 +35,21 @@
 - 주소 입력 필드에 현재 URL 표시 (델리게이트)
 - 주소로 이동 실패한 경우 에러 표시 (델리게이트)
 
-### `UITextField`로 텍스트 입력받기
+### UITextField로 텍스트 입력받기
 
 1. `ViewController`에 `@IBOutlet` 프로퍼티로 연결
-~~~swift
-class ViewController: UIViewController {
-    @IBOutlet weak var urlTextField: UITextField!
-}
-~~~
+    ~~~swift
+    class ViewController: UIViewController {
+        @IBOutlet weak var urlTextField: UITextField!
+    }
+    ~~~
 2. 이제 `UITextField`를 터치하면 글자를 입력할 수 있다
 3. 입력받은 글자는 `UITextField`의 `text`프로퍼티로 접근하여 가져올 수 있다. `Optional`이므로 안전하게 `Optional Unwrapping`하여 사용하자
-~~~swift
-if let url = urlTextField.text {
-    // do something
-}
-~~~
+    ~~~swift
+    if let url = urlTextField.text {
+        // do something
+    }
+    ~~~
 
 ## 배운 내용
 
