@@ -29,9 +29,11 @@
 
 ## 2. 학습 내용
 
-- [Text Field로 텍스트 입력받기](#Text-Field로-텍스트-입력받기)
+- [Text Field](#Text-Field)
+    - [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
+    - [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
+- [Toolbar](#Toolbar)
 - [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
-- [Toolbar 사용하기](#Toolbar-사용하기)
 - 입력한 주소로 이동하기
 - 앞으로 가기, 뒤로 가기 버튼
 - Alert 표시
@@ -39,7 +41,12 @@
 - 주소 입력 필드에 현재 URL 표시 (델리게이트)
 - 주소로 이동 실패한 경우 에러 표시 (델리게이트)
 
-### Text Field로 텍스트 입력받기
+### Text Field
+
+- [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
+- [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
+
+#### 텍스트 입력받고 사용하기
 
 1. `ViewController`에 `@IBOutlet` 프로퍼티로 연결.
     ~~~swift
@@ -55,6 +62,26 @@
     }
     ~~~
 
+#### Keyboard Type 설정하기
+
+입력받을 콘텐츠에 맞는 Keyboard Type을 설정하면 사용자가 더 편리해할 것이므로 꼭 하자.  
+(핸드폰 번호를 입력하는 Text Field라면 문자는 불필요하므로 숫자패드가 보이면 더 누르기 쉬울 것이다.)
+- [H.I.G - Text Fields 읽어보기](https://developer.apple.com/design/human-interface-guidelines/ios/controls/text-fields/)
+- 스토리보드에서 Text Field 선택 후 Attributes Inspector -> Text Input Traits -> Keyboard Type에서 설정
+- 웹 주소를 입력받으므로 `URL`Type으로 설정했다.
+
+
+
+### Toolbar
+
+화면 하단에 `Bar`를 사용한다면 `Toolbar`와`Tab Bar`의 차이를 잘 이해해야 한다.
+- [H.I.G - Toolbars 읽어보기](https://developer.apple.com/design/human-interface-guidelines/ios/bars/toolbars/)
+- Toolbar: 현재 화면과 관련된 기능. 즉, `도구` 개념 (Ex: 사진 앱의 공유/하트/삭제 버튼)
+- Tab Bar: 앱의 다른 섹션으로 빠르게 전환해 줌 (EX: 시계 앱의 세계 시계/알람/스톱워치/타이머 탭)
+- `앞으로/뒤로 가기`, `새로 고침` 버튼은 웹 브라우저의 도구 역할을 하므로 `Toolbar`를 사용했다.
+
+
+
 ### String을 URL 타입으로 변환하기
 
 1. `URL`의 생성자 `init(string:)`으로 String 텍스트를 URL타입으로 생성한다. 
@@ -66,16 +93,6 @@
 2. 이 생성자는 string이 유효하지 않다면, nil을 반환한다. 이것을 활용하면 입력한 주소의 유효성을 검증할 수 있다.
     > **Developer Document > URL > init(string:)**  
     > This initializer returns nil if the string doesn’t represent a valid URL. For example, an empty string or one containing characters that are illegal in a URL produces nil.
-
-### Toolbar 사용하기
-
-화면 하단에 `Bar`를 사용한다면 `Toolbar`와`Tab Bar`의 차이를 잘 이해해야 한다.
-- [H.I.G - Toolbars](https://developer.apple.com/design/human-interface-guidelines/ios/bars/toolbars/) 읽어보기
-- Toolbar: 현재 화면과 관련된 기능. 즉, `도구` 개념 (Ex: 사진 앱의 공유/하트/삭제 버튼)
-- Tab Bar: 앱의 다른 섹션으로 빠르게 전환해 줌 (EX: 시계 앱의 세계 시계/알람/스톱워치/타이머 탭)
-- `앞으로/뒤로 가기`, `새로 고침` 버튼은 웹 브라우저의 도구 역할을 하므로 `Toolbar`를 사용한다.
-
-
 
 
 
