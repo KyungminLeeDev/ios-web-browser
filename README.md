@@ -34,11 +34,11 @@
 - [Text Field](#Text-Field)
     - [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
     - [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
-- [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar?)
+- [Alert](#Alert-표시하기)
+- [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar)
 - [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
 - 입력한 주소로 이동하기
 - 앞으로 가기, 뒤로 가기 버튼
-- Alert 표시
 - 정규식으로 주소에 https 포함했는지 검사
 - 주소 입력 필드에 현재 URL 표시 (델리게이트)
 - 주소로 이동 실패한 경우 에러 표시 (델리게이트)
@@ -46,11 +46,6 @@
 <br><br><br>
 
 ### Text Field
-
-- [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
-- [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
-
-<br><br><br>
 
 #### 텍스트 입력받고 사용하기
 
@@ -75,6 +70,36 @@
 - [H.I.G - Text Fields 읽어보기](https://developer.apple.com/design/human-interface-guidelines/ios/controls/text-fields/)
 - 스토리보드에서 Text Field 선택 후 Attributes Inspector -> Text Input Traits -> Keyboard Type에서 설정
 - 웹 주소를 입력받으므로 `URL`Type으로 설정했다.
+
+
+
+<br><br><br>
+
+### Alert 표시하기
+
+~~~swift
+func showError(error: ErrorMessage) {
+    // 1. Alert Controller 생성
+    let errorAlert = UIAlertController(title: "Error!", message: error.rawValue, preferredStyle: .alert)
+    // 2. Action 버튼 생성
+    let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+    // 3. Alert Controller에 Action 추가
+    errorAlert.addAction(ok)
+
+    // 4. Alert 띄우기
+    self.present(errorAlert, animated: false)
+}
+~~~
+- [Getting the User's Attention with Alerts and Action Sheets 읽어보기](https://developer.apple.com/documentation/uikit/windows_and_screens/getting_the_user_s_attention_with_alerts_and_action_sheets)
+- UIAlertController.Style
+    - actionSheet: 화면 아래에서 슬라이드 되며 올라온다. 2개 이상의 선택을 해야 할 때 주로 사용
+    - alert: 화면 가운데에 표시. 2개의 선택을 해야 할 때 주로 사용
+- UIAlertAction.Style
+    - default
+    - cancel: 취소 Action에 사용. default보다 글자가 굵다
+    - destructive: 데이터의 수정/삭제 Action에 사용. 글자 빨간색으로 표시
+
+
 
 <br><br><br>
 
