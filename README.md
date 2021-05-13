@@ -34,9 +34,13 @@
 - [Text Field](#Text-Field)
     - [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
     - [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
-- [Alert](#Alert-표시하기)
+- [Alert 표시하기](#Alert-표시하기)
+- [Web View](#Web-View)
+    - [입력한 주소로 이동하기](#입력한-주소로-이동하기)
+    - [앞으로 가기, 뒤로 가기, 새로고침](#앞으로-가기-뒤로-가기-새로고침)
 - [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar)
 - [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
+- 
 - 입력한 주소로 이동하기
 - 앞으로 가기, 뒤로 가기 버튼
 - 정규식으로 주소에 https 포함했는지 검사
@@ -92,12 +96,81 @@ func showError(error: ErrorMessage) {
 ~~~
 - [Getting the User's Attention with Alerts and Action Sheets 읽어보기](https://developer.apple.com/documentation/uikit/windows_and_screens/getting_the_user_s_attention_with_alerts_and_action_sheets)
 - UIAlertController.Style
-    - actionSheet: 화면 아래에서 슬라이드 되며 올라온다. 2개 이상의 선택을 해야 할 때 주로 사용
-    - alert: 화면 가운데에 표시. 2개의 선택을 해야 할 때 주로 사용
+    - actionSheet: 화면 아래에서 슬라이드 되며 올라온다. 2개 이상의 Action을 사용할 때 주로 사용
+    - alert: 화면 가운데에 표시. 2개의 Action을 사용할 때 주로 사용
 - UIAlertAction.Style
     - default
     - cancel: 취소 Action에 사용. default보다 글자가 굵다
     - destructive: 데이터의 수정/삭제 Action에 사용. 글자 빨간색으로 표시
+
+
+
+<br><br><br>
+
+### Web View
+
+#### 입력한 주소로 이동하기
+
+##### 1. Web View로 웹 페이지 불러오기
+
+입력한 주소를 String -> URL -> URLRequest 순서로 변환하여 WKWebView `load(_:)` 메서드의 인자로 넣어 호출한다.
+~~~swift
+func openPage(url: String) {
+    // 1. URL 객체 생성
+    guard let url = URL(string: url) else {
+        return
+    }
+    // 2. URLRequest 객체 생성
+    let request = URLRequest(url: url)
+    // 3. Web View로 웹 페이지 불러오기
+    webView.load(request)
+}
+~~~
+
+##### 2. 현재 웹 페이지의 주소 표시하기
+
+이동이 완료 됐다면, 주소 Text Field에 현재 웹 페이지의 주소를 보여주자. 
+~~~swift
+func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    urlTextField.text = webView.url?.absoluteString
+}
+~~~
+- WKNavigationDelegate `webView(_:didFinish:)` 메서드는 Web View의 이동이 완료되면 호출된다.
+
+
+
+
+#### 앞으로 가기, 뒤로 가기, 새로고침
+
+##### 1. 앞으로/뒤로 가기, 새로고침 기능 구현
+
+WKWebView 클래스에 goForward(), goBack(), reload() 메서드가 이미 정의돼있으므로, 버튼의 액션 메서드에서 호출해 준다.
+~~~swift
+@IBAction func goForwardPage(_ sender: UIBarButtonItem) {
+    webView.goForward()
+}
+
+@IBAction func goBackPage(_ sender: UIBarButtonItem) {
+    webView.goBack()
+}
+
+@IBAction func reloadPage(_ sender: UIBarButtonItem) {
+    webView.reload()
+}
+~~~
+
+##### 2. 앞으로/뒤로 갈 수 있을 때만 버튼 활성화하기
+
+만약 열어본 웹 페이지가 하나 뿐이라면, 앞/뒤 페이지가 없으므로 해당 버튼을 눌러도 이동하지 않을 것이다.  
+이 때, 사용자는 기능에 문제가 있다고 생각할 수 있으므로 이동할 수 없을 때에는 버튼을 비활성화 해준다.  
+
+Web View의 이동이 완료될 때마다 WKWebView `canGoForward`/`canGoBack` 프로퍼티로 확인해서 버튼을 활성/비활성 해준다.
+~~~swift
+func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    goForwardButton.isEnabled = webView.canGoForward
+    goBackButton.isEnabled = webView.canGoBack
+}
+~~~
 
 
 
