@@ -15,9 +15,9 @@
 ## 1. 개요
 
 - Webkit으로 구현한 웹 브라우저 앱
-- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md)
+- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md), [`TWL`](./TWL.md)
 - 진행 기간: 2020.11.09~15 (1주)
-- 학습 Keyword: `WebKit View` `Toolbar` `Button` `Text Field` `Alert`
+- 학습 Keyword: `Web View` `Toolbar` `Button` `Text Field` `Alert`
 - 기능
 
 | 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로 고침 | 
@@ -40,11 +40,7 @@
     - [앞으로 가기, 뒤로 가기, 새로고침](#앞으로-가기-뒤로-가기-새로고침)
 - [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar)
 - [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
-- 
-- 입력한 주소로 이동하기
-- 앞으로 가기, 뒤로 가기 버튼
 - 정규식으로 주소에 https 포함했는지 검사
-- 주소 입력 필드에 현재 URL 표시 (델리게이트)
 - 주소로 이동 실패한 경우 에러 표시 (델리게이트)
 
 <br><br><br>
