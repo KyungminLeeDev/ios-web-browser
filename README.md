@@ -34,7 +34,7 @@
 - [Text Field](#Text-Field)
     - [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
     - [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
-- [Toolbar](#Toolbar)
+- [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar?)
 - [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
 - 입력한 주소로 이동하기
 - 앞으로 가기, 뒤로 가기 버튼
@@ -49,6 +49,8 @@
 
 - [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
 - [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
+
+<br><br><br>
 
 #### 텍스트 입력받고 사용하기
 
@@ -76,7 +78,7 @@
 
 <br><br><br>
 
-### Toolbar
+### Toolbar or Tab Bar?
 
 화면 하단에 `Bar`를 사용한다면 `Toolbar`와`Tab Bar`의 차이를 잘 이해해야 한다.
 - [H.I.G - Toolbars 읽어보기](https://developer.apple.com/design/human-interface-guidelines/ios/bars/toolbars/)
