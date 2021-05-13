@@ -6,8 +6,25 @@
 
 1. [개요](#1-개요)
 2. [학습 내용](#2-학습-내용)
+    - [Text Field](#Text-Field)
+        - [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
+        - [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
+    - [Alert 표시하기](#Alert-표시하기)
+    - [Web View](#Web-View)
+        - [입력한 주소로 이동하기](#입력한-주소로-이동하기)
+        - [앞으로 가기, 뒤로 가기, 새로고침](#앞으로-가기-뒤로-가기-새로고침)
+    - [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar)
+    - [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
+    - 정규식으로 주소에 https 포함했는지 검사
+    - 주소로 이동 실패한 경우 에러 표시 (델리게이트)
 3. [배운 내용](#배운-내용)
+    - [메서드의 확장성 고려하기](#메서드의-확장성-고려하기)
+    - [Alert은 꼭 필요할 때 사용하기](#Alert은-꼭-필요할-때-사용하기)
 4. [고민한 내용](#고민한-내용)
+    - [메서드의 재사용성](#메서드의-재사용성)
+    - 메서드의 확장성 관련 (Step1 PR)
+    - 메서드 정의 순서 (Step4 PR)
+    - 웹 페이지 로딩중에 다른 주소를 입력하면 뒤에요 요청된 URL 무시 (Step4 PR)
 5. [개선하고 싶은 내용](#개선하고-싶은-내용)
 
 <br><br><br>
@@ -30,20 +47,6 @@
 <br><br><br>
 
 ## 2. 학습 내용
-
-- [Text Field](#Text-Field)
-    - [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
-    - [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
-- [Alert 표시하기](#Alert-표시하기)
-- [Web View](#Web-View)
-    - [입력한 주소로 이동하기](#입력한-주소로-이동하기)
-    - [앞으로 가기, 뒤로 가기, 새로고침](#앞으로-가기-뒤로-가기-새로고침)
-- [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar)
-- [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
-- 정규식으로 주소에 https 포함했는지 검사
-- 주소로 이동 실패한 경우 에러 표시 (델리게이트)
-
-<br><br><br>
 
 ### Text Field
 
@@ -71,10 +74,6 @@
 - 스토리보드에서 Text Field 선택 후 Attributes Inspector -> Text Input Traits -> Keyboard Type에서 설정
 - 웹 주소를 입력받으므로 `URL`Type으로 설정했다.
 
-
-
-<br><br><br>
-
 ### Alert 표시하기
 
 ~~~swift
@@ -98,10 +97,6 @@ func showError(error: ErrorMessage) {
     - default
     - cancel: 취소 Action에 사용. default보다 글자가 굵다
     - destructive: 데이터의 수정/삭제 Action에 사용. 글자 빨간색으로 표시
-
-
-
-<br><br><br>
 
 ### Web View
 
@@ -132,9 +127,6 @@ func showError(error: ErrorMessage) {
     }
     ~~~
     - WKNavigationDelegate `webView(_:didFinish:)` 메서드는 Web View의 이동이 완료되면 호출된다.
-
-
-
 
 #### 앞으로 가기, 뒤로 가기, 새로고침
 
@@ -168,10 +160,6 @@ func showError(error: ErrorMessage) {
     }
     ~~~
 
-
-
-<br><br><br>
-
 ### Toolbar or Tab Bar?
 
 화면 하단에 `Bar`를 사용한다면 `Toolbar`와`Tab Bar`의 차이를 잘 이해해야 한다.
@@ -179,8 +167,6 @@ func showError(error: ErrorMessage) {
 - Toolbar: 현재 화면과 관련된 기능. 즉, `도구` 개념 (Ex: 사진 앱의 공유/하트/삭제 버튼)
 - Tab Bar: 앱의 다른 섹션으로 빠르게 전환해 줌 (EX: 시계 앱의 세계 시계/알람/스톱워치/타이머 탭)
 - `앞으로/뒤로 가기`, `새로 고침` 버튼은 웹 브라우저의 도구 역할을 하므로 `Toolbar`를 사용했다.
-
-<br><br><br>
 
 ### String을 URL 타입으로 변환하기
 
@@ -205,11 +191,6 @@ func showError(error: ErrorMessage) {
 
 ## 배운 내용
 
-- [메서드의 확장성 고려하기](#메서드의-확장성-고려하기)
-- [Alert은 꼭 필요할 때 사용하기](#Alert은-꼭-필요할-때-사용하기)
-
-<br><br><br>
-
 ### 메서드의 확장성 고려하기
 
 - 배경
@@ -230,8 +211,6 @@ func showError(error: ErrorMessage) {
     ~~~
 - 배운 점
     - 개발자라면 무작정 구현할 것이 아니라, 기획의 변경 가능성과 여러 가지 상황에 대해서도 미리 고민하고 코드를 작성해야 한다
-
-<br><br><br>
 
 ### Alert은 꼭 필요할 때 사용하기
 
@@ -266,13 +245,6 @@ func showError(error: ErrorMessage) {
 
 
 ## 고민한 내용
-
-- [메서드의 재사용성](#메서드의-재사용성)
-- 메서드의 확장성 관련 (Step1 PR)
-- 메서드 정의 순서 (Step4 PR)
-- 웹 페이지 로딩중에 다른 주소를 입력하면 뒤에요 요청된 URL 무시 (Step4 PR)
-
-<br><br><br>
 
 ### 메서드의 재사용성
 
