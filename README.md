@@ -58,6 +58,9 @@
     }
     ~~~
 
+[👆목차로 가기](#목차)
+<br>
+
 #### Keyboard Type 설정하기
 
 입력받을 콘텐츠에 맞는 Keyboard Type을 설정하면 사용자가 더 편리해할 것이므로 꼭 하자.  
@@ -66,6 +69,9 @@
 - [H.I.G - Text Fields 읽어보기](https://developer.apple.com/design/human-interface-guidelines/ios/controls/text-fields/)
 - 스토리보드에서 Text Field 선택 후 Attributes Inspector -> Text Input Traits -> Keyboard Type에서 설정
 - 웹 주소를 입력받으므로 `URL` Type으로 설정하니, 키보드의 `.`, `/`, `.com`등 URL 작성에 유용하게 배치됐다.
+
+[👆목차로 가기](#목차)
+<br>
 
 ### Alert 표시하기
 
@@ -90,6 +96,9 @@ func showError(error: ErrorMessage) {
     - default
     - cancel: 취소 Action에 사용. default보다 글자가 굵다
     - destructive: 데이터의 수정/삭제 Action에 사용. 글자 빨간색으로 표시
+
+[👆목차로 가기](#목차)
+<br>
 
 ### Web View
 
@@ -120,6 +129,9 @@ func showError(error: ErrorMessage) {
     }
     ~~~
     - WKNavigationDelegate `webView(_:didFinish:)` 메서드는 Web View의 이동이 완료되면 호출된다.
+
+[👆목차로 가기](#목차)
+<br>
 
 #### 앞으로 가기, 뒤로 가기, 새로고침
 
@@ -153,6 +165,9 @@ func showError(error: ErrorMessage) {
     }
     ~~~
 
+[👆목차로 가기](#목차)
+<br>
+
 ### Toolbar or Tab Bar?
 
 화면 하단에 `Bar`를 사용한다면 `Toolbar`와`Tab Bar`의 차이를 잘 이해해야 한다.
@@ -160,6 +175,9 @@ func showError(error: ErrorMessage) {
 - Toolbar: 현재 화면과 관련된 기능. 즉, `도구` 개념 (Ex: 사진 앱의 공유/하트/삭제 버튼)
 - Tab Bar: 앱의 다른 섹션으로 빠르게 전환해 줌 (EX: 시계 앱의 세계 시계/알람/스톱워치/타이머 탭)
 - `앞으로/뒤로 가기`, `새로 고침` 버튼은 웹 브라우저의 도구 역할을 하므로 `Toolbar`를 사용했다.
+
+[👆목차로 가기](#목차)
+<br>
 
 ### String을 URL 타입으로 변환하기
 
@@ -193,8 +211,6 @@ func checkFront(of url: String?) -> Bool {
     - 메타 문자 `\S`는 공백문자를 제외한 문자를 의미하고, Swift에서는 역슬래쉬 하나를 더 붙여서 `\\S`로 사용
     - 메타 문자 `+`는 앞 문자가 1개 이상을 의미하므로, `http:// 또는 https://`가 문자내에 1개 이상 있다는 것을 의미
 
-<br>
-
 [👆목차로 가기](#목차)
 <br><br><br>
 
@@ -223,6 +239,8 @@ func checkFront(of url: String?) -> Bool {
 - 배운 점  
     메서드를 작성할 때는 기획의 변경과 여러 가지 상황 등에 더 쉽게 대응할 수 있는 방향으로 확장성을 고려해야 한다.
 
+[👆목차로 가기](#목차)
+<br>
 
 ### Alert은 꼭 필요할 때 사용하기
 
@@ -248,8 +266,6 @@ func checkFront(of url: String?) -> Bool {
     - Alert은 꼭 필요할 때만 사용해야 한다.
     - H.I.G 문서는 매우 중요하다! [Feedback - Alert관련 내용](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/feedback/)
 
-<br>
-
 [👆목차로 가기](#목차)
 <br><br><br>
 
@@ -270,6 +286,9 @@ func checkFront(of url: String?) -> Bool {
     3. `입력한 URL로 Web View를 이동하는 메서드`와 `WKWebView.load(_:)`의 차이는 URL이 무효할 경우 에러 표시를 해주는 것뿐이다
 - 결론  
     프로젝트의 `ViewController`에서만 사용할 것이므로 `ViewController`에 정의했다.
+
+[👆목차로 가기](#목차)
+<br>
 
 ### 사용자가 이동 버튼을 여러 번 다시 누를 경우
 
@@ -315,21 +334,17 @@ func checkFront(of url: String?) -> Bool {
     }
     ~~~
 
-<br>
-
 [👆목차로 가기](#목차)
 <br><br><br>
 
 
 
-## 3. 개선하고 싶은 내용
+## 4. 개선하고 싶은 내용
 
 - 뒤로 가기, 앞으로 가기, 새로 고침 기능을 Webkit 메서드를 사용하지 않고 구현해보기
 - 상/하단의 Bar가 항상 보이고 있어서 웹 뷰 영역이 비좁아 보인다. 사파리 앱처럼 아래로 스크롤 시에 상/하단 Bar를 최소화하고, 위로 스크롤 시에 다시 보이게 하기
 - 에러 핸들링 Error 프로토콜 사용하기, 에러 핸들링 분리하기
 - 다크 모드 대응하기
-
-<br>
 
 [👆목차로 가기](#목차)
 <br><br><br>
