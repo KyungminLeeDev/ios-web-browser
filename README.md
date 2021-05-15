@@ -21,9 +21,7 @@
     - [Alert은 꼭 필요할 때 사용하기](#Alert은-꼭-필요할-때-사용하기)
 4. [고민한 내용](#고민한-내용)
     - [메서드의 재사용성](#메서드의-재사용성)
-    - 메서드의 확장성 관련 (Step1 PR)
-    - 메서드 정의 순서 (Step4 PR)
-    - 웹 페이지 로딩중에 다른 주소를 입력하면 뒤에요 요청된 URL 무시 (Step4 PR)
+    - [사용자가 이동 버튼을 여러 번 다시 누를 경우](#사용자가-이동-버튼을-여러-번-다시-누를-경우)
 5. [개선하고 싶은 내용](#개선하고-싶은-내용)
 
 <br><br><br>
@@ -278,6 +276,49 @@ func checkFront(of url: String?) -> Bool {
 - 결론  
     프로젝트의 `ViewController`에서만 사용할 것이므로 `ViewController`에 정의했다.
 
+### 사용자가 이동 버튼을 여러 번 다시 누를 경우
+
+- 배경
+    입력한 URL로 Web View를 이동하는 메서드를 구현했다.
+- 고민의 흐름
+    1. 사용자가 이동 버튼을 연속해서 계속 누른다면 웹 페이지 로딩이 끝나기 전에 계속 재시도할 것이다.  
+        이것은 사용자 데이터를 불필하게 더 소모하는 것이니 막는 것이 좋겠다.  
+        ~~~swift
+        func openPage(url: String) {
+            guard !webView.isLoading else {
+                return
+            }
+            guard let url = URL(string: url) else {
+                return showError(error: .url)
+            }
+
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
+        ~~~
+    2. [코드리뷰](https://github.com/yagom-academy/ios-web-browser/pull/31/files/cceed8b192bec5c901d8f047b5039e5da51997af#r522941512)에서 예상하지 못한 상황을 알게 되었다.  
+        > 궁금한 것이 있습니다  
+        > webView가 _www.naver.com_를 요청하고 로딩 중에  
+        > www.yagom.net 을 입력하면 뒤에 요청된 www.yagom.net 이 무시되야하나요?  
+    만약 인터넷 속도가 매우 느린 상황이라면 유저는 다른 페이지로 이동하고 싶지만 버튼을 눌러도 이동하지 못하는 상황이 발생할 것이다.
+- 결론
+    사파리 앱의 경우에는 별다른 대응 없이 계속 새로 요청이 되었다.  
+    다른 방법으로 새로 요청한 주소가 직전에 입력한 주소와 같다면 무시하는 방법이 생각났지만,  
+    프로젝트 기능 명세서에 해당 내용은 없으므로 우선은 매번 새로 요청되도록 하고, 차후 시간 여유가 있다면 적용해보기로 했다.  
+    ~~~swift
+    func openPage(url: String) {
+        guard !webView.isLoading else {
+            return
+        }
+        guard let url = URL(string: url) else {
+            return showError(error: .url)
+        }
+
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
+    ~~~
+
 <br>
 
 [👆목차로 가기](#목차)
@@ -288,9 +329,9 @@ func checkFront(of url: String?) -> Bool {
 ## 개선하고 싶은 내용
 
 - 뒤로 가기, 앞으로 가기, 새로 고침 기능을 Webkit 메서드를 사용하지 않고 구현해보기
-- 상/하단의 Bar가 항상 보이고 있어서 웹 뷰 영역이 비좁아 보인다. 사파리 앱처럼 아래로 스크롤 시에 상/하단 Bar를 최소화하고, 위로 스크롤 시에 다시 보이게 하는 기능을 구현 해 보기
+- 상/하단의 Bar가 항상 보이고 있어서 웹 뷰 영역이 비좁아 보인다. 사파리 앱처럼 아래로 스크롤 시에 상/하단 Bar를 최소화하고, 위로 스크롤 시에 다시 보이게 하기
 - 에러 핸들링 Error 프로토콜 사용하기, 에러 핸들링 분리하기
-- 다크모드 대응
+- 다크 모드 대응하기
 
 <br>
 
