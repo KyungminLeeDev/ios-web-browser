@@ -59,7 +59,7 @@
     ~~~
 
 [👆목차로 가기](#목차)
-<br>
+<br><br><br>
 
 #### Keyboard Type 설정하기
 
@@ -71,7 +71,7 @@
 - 웹 주소를 입력받으므로 `URL` Type으로 설정하니, 키보드의 `.`, `/`, `.com`등 URL 작성에 유용하게 배치됐다.
 
 [👆목차로 가기](#목차)
-<br>
+<br><br><br>
 
 ### Alert 표시하기
 
@@ -98,7 +98,7 @@ func showError(error: ErrorMessage) {
     - destructive: 데이터의 수정/삭제 Action에 사용. 글자 빨간색으로 표시
 
 [👆목차로 가기](#목차)
-<br>
+<br><br><br>
 
 ### Web View
 
@@ -131,7 +131,7 @@ func showError(error: ErrorMessage) {
     - WKNavigationDelegate `webView(_:didFinish:)` 메서드는 Web View의 이동이 완료되면 호출된다.
 
 [👆목차로 가기](#목차)
-<br>
+<br><br><br>
 
 #### 앞으로 가기, 뒤로 가기, 새로고침
 
@@ -166,7 +166,7 @@ func showError(error: ErrorMessage) {
     ~~~
 
 [👆목차로 가기](#목차)
-<br>
+<br><br><br>
 
 ### Toolbar or Tab Bar?
 
@@ -177,7 +177,7 @@ func showError(error: ErrorMessage) {
 - `앞으로/뒤로 가기`, `새로 고침` 버튼은 웹 브라우저의 도구 역할을 하므로 `Toolbar`를 사용했다.
 
 [👆목차로 가기](#목차)
-<br>
+<br><br><br>
 
 ### String을 URL 타입으로 변환하기
 
@@ -240,7 +240,7 @@ func checkFront(of url: String?) -> Bool {
     메서드를 작성할 때는 기획의 변경과 여러 가지 상황 등에 더 쉽게 대응할 수 있는 방향으로 확장성을 고려해야 한다.
 
 [👆목차로 가기](#목차)
-<br>
+<br><br><br>
 
 ### Alert은 꼭 필요할 때 사용하기
 
@@ -288,7 +288,7 @@ func checkFront(of url: String?) -> Bool {
     프로젝트의 `ViewController`에서만 사용할 것이므로 `ViewController`에 정의했다.
 
 [👆목차로 가기](#목차)
-<br>
+<br><br><br>
 
 ### 사용자가 이동 버튼을 여러 번 다시 누를 경우
 
