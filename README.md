@@ -212,7 +212,7 @@ func checkFront(of url: String?) -> Bool {
 ### 메서드의 확장성 고려하기
 
 - 배경  
-    즐겨 찾는 웹페이지의 주소를 받아 Web View에 띄우는 메서드를 구현했다.
+    즐겨 찾는 웹페이지의 주소를 받아 Web View에 띄우는 메서드를 구현했다.  
     즐겨 찾는 URL을 `Enum`타입으로 묶고, 이를 매개변수로 받아서 해당 URL로 이동하면 되겠다는 생각이었다.
     ~~~swift
     func load(favoriteWebPage: FavoriteWebPage)
@@ -222,8 +222,8 @@ func checkFront(of url: String?) -> Bool {
     > 기획서가 즐겨찾는 웹 페이지 뿐만 아니라 직접 입력한 웹 페이지도 불러올 수 있는 기능을 만들어 달라고 한다면 코드의 수정 없이 기능 추가/변경이 원활할 수 있을까요?  
     > 정답은 없습니다. 열어두고 생각해봐도 좋을 포인트 인것 같아요  
 - 개선  
-    1. 즐겨 찾는 웹 페이지만 매개변수로 받으므로, 직접 입력한 URL로 이동하는 기능을 위해서는 또 다른 메서드를 만들어야 한다.
-    2. 비슷한 기능의 메서드가 두 개일 필요가 없고, URL을 매개변수로 받아 이동하는 메서드만 있으면 될 것이다.
+    즐겨 찾는 웹 페이지만 매개변수로 받으므로, 직접 입력한 URL로 이동하는 기능을 위해서는 또 다른 메서드를 만들어야 한다.  
+    비슷한 기능의 메서드가 두 개일 필요가 없으니, URL을 매개변수로 받아 이동하도록 수정했다.
     ~~~swift
     func openPage(url: String)
     ~~~
@@ -251,7 +251,7 @@ func checkFront(of url: String?) -> Bool {
         }
     }
     ~~~
-- 배운 점
+- 배운 점  
     - Alert은 꼭 필요할 때만 사용해야 한다.
     - H.I.G 문서는 매우 중요하다! [Feedback - Alert관련 내용](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/feedback/)
 
@@ -266,15 +266,17 @@ func checkFront(of url: String?) -> Bool {
 
 ### 메서드의 재사용성
 
-`입력한 URL로 Web View를 이동하는 메서드`를 `ViewController`에 정의했다. 이 메서드를 만약 다른 `ViewController`에서 사용하려면 메서드를 복붙해야 하는데 더 나은 방법은 없을까?
-- `UIViewController`를 extension 해서 메서드를 정의하면 모든 `ViewController`에서 사용할 수 있겠네?
-    - 하지만 모든 `ViewController`가 `Web View`와 `입력한 URL로 Web View를 이동하는 메서드`가 필요한 건 아니다
-- `WKWebView`를 extesnsion 해서 메서드를 정의하면 `WKWebView`를 사용하는 곳에서 모두 이 기능을 사용할 수 있겠네?
-    - `WKWebView`를 사용하는 모든 곳에서 이 기능이 필요할까? 그렇다면 애플에서 이미 구현 해놨을 것이다
-- `입력한 URL로 Web View를 이동하는 메서드`와 `WKWebView.load(_:)`의 차이는 URL이 무효일 경우 에러 표시를 해주는 것뿐이다
-- 결론
-    - 프로젝트의 `ViewController`에서만 사용할 것이므로 이곳에 정의
-    - 이 경우 말고, 기능을 재사용할 방법은 extension뿐 아니라, 전용 객체를 만들어 사용하면 될 것이다.
+- 배경  
+    입력한 URL로 Web View를 이동하는 메서드를 `ViewController`에 정의했다.  
+    이 메서드를 만약 다른 `ViewController`에서 사용하려면 메서드를 복붙해야 하는데 더 나은 방법은 없을까?
+- 고민의 흐름  
+    1. `UIViewController`를 extension 해서 메서드를 정의하면 모든 `ViewController`에서 사용할 수 있겠네?  
+        하지만 모든 `ViewController`가 `Web View`와 `입력한 URL로 Web View를 이동하는 메서드`가 필요한 건 아니다
+    2. `WKWebView`를 extesnsion 해서 메서드를 정의하면 `WKWebView`를 사용하는 곳에서 모두 이 기능을 사용할 수 있겠네?  
+        `WKWebView`를 사용하는 모든 곳에서 이 기능이 필요할까? 그렇다면 애플에서 이미 구현 해놨을 것이다  
+    3. `입력한 URL로 Web View를 이동하는 메서드`와 `WKWebView.load(_:)`의 차이는 URL이 무효할 경우 에러 표시를 해주는 것뿐이다
+- 결론  
+    프로젝트의 `ViewController`에서만 사용할 것이므로 `ViewController`에 정의했다.
 
 <br>
 
