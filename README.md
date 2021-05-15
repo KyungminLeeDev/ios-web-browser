@@ -15,7 +15,7 @@
         - [앞으로 가기, 뒤로 가기, 새로고침](#앞으로-가기-뒤로-가기-새로고침)
     - [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar)
     - [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
-    - 정규식으로 주소에 https 포함했는지 검사
+    - [정규식으로 주소에 https 포함했는지 검사](#정규식으로-주소에-https-포함됐는지-검사)
     - 주소로 이동 실패한 경우 에러 표시 (델리게이트)
 3. [배운 내용](#배운-내용)
     - [메서드의 확장성 고려하기](#메서드의-확장성-고려하기)
@@ -180,7 +180,25 @@ func showError(error: ErrorMessage) {
     > **Developer Document > URL > init(string:)**  
     > This initializer returns nil if the string doesn’t represent a valid URL. For example, an empty string or one containing characters that are illegal in a URL produces nil.
 
+### 정규식으로 주소에 https 포함됐는지 검사
 
+주소를 입력할 때 `https://`을 붙이지 않고 `naver.com`을 입력한다면 URL 타입 생성이 실패한다.  
+입력한 주소를 미리 검사해서, 사용자가 `https://`를 입력하지 않았다면 자동으로 붙여주는 기능을 만들었다.  
+
+~~~swift
+func checkFront(of url: String?) -> Bool {
+    let urlRegex = "((http|https)://)[\\S]+"
+    
+    return NSPredicate(format: "SELF MATCHES %@", urlRegex).evaluate(with: url)
+}
+~~~
+> 이 기능은 팀원 `Lina`가 구현 후 나에게 설명해 주었다.
+- 메타 문자: 정규식에서 일정한 의미를 가지고 쓰는 특수문자
+- `http|https`: 메타 문자 `|`는 `or`을 의미하므로 `http 또는 https`를 의미
+- `((http|https)://)`: 메타 문자 `()`는 서브 패턴을 지정하므로, `http:// 또는 https://`를 의미
+- `[\\S]+`
+    - 메타 문자 `\S`는 공백문자를 제외한 문자를 의미하고, Swift에서는 역슬래쉬 하나를 더 붙여서 `\\S`로 사용
+    - 메타 문자 `+`는 앞 문자가 1개 이상을 의미하므로, `http:// 또는 https://`가 문자내에 1개 이상 있다는 것을 의미
 
 <br>
 
