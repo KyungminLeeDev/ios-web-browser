@@ -218,17 +218,16 @@ func checkFront(of url: String?) -> Bool {
 ~~~swift
     func load(favoriteWebPage: FavoriteWebPage)
 ~~~
-[코드리뷰 코멘트](https://github.com/yagom-academy/ios-web-browser/pull/8#discussion_r520636239)
-> 즐겨찾는 웹페이지만 불러올 수 있는 메서드라면 차후의 확장성 측면에서 괜찮을까요?
-> 기획서가 즐겨찾는 웹 페이지 뿐만 아니라 직접 입력한 웹 페이지도 불러올 수 있는 기능을 만들어 달라고 한다면 코드의 수정 없이 기능 추가/변경이 원활할 수 있을까요?
+> [코드리뷰 코멘트](https://github.com/yagom-academy/ios-web-browser/pull/8#discussion_r520636239)  
+> 즐겨찾는 웹페이지만 불러올 수 있는 메서드라면 차후의 확장성 측면에서 괜찮을까요?  
+> 기획서가 즐겨찾는 웹 페이지 뿐만 아니라 직접 입력한 웹 페이지도 불러올 수 있는 기능을 만들어 달라고 한다면 코드의 수정 없이 기능 추가/변경이 원활할 수 있을까요?  
 > 정답은 없습니다. 열어두고 생각해봐도 좋을 포인트 인것 같아요  
 
 메서드의 확장성에 대해 고민하여 수정했다.
 1. 즐겨 찾는 웹 페이지만 매개변수로 받으므로, 직접 입력한 URL로 이동하는 기능을 위해서는 또 다른 메서드를 만들어야 한다.
 2. 비슷한 기능의 메서드가 두 개일 필요가 없고, URL을 매개변수로 받아 이동하는 메서드만 있으면 될 것이다.
 ~~~swift
-func openPage(url: String) {
-}
+func openPage(url: String)
 ~~~
 
 
@@ -236,16 +235,15 @@ func openPage(url: String) {
 ### Alert은 꼭 필요할 때 사용하기
 
 - 배경
-    - 앞으로/뒤로 가기 버튼을 눌렀을 때, 앞으로/뒤로 갈 수 없다면 Alert으로 에러를 띄우도록 구현
-    - 사용자가 버튼을 눌렀는데 아무런 반응 없이 기능이 동작하지 않는다면 안 좋을 것이니, Alert으로 에러 내용을 표시하면 되겠다는 생각이었다
+    앞으로/뒤로 가기 버튼을 눌렀을 때, 앞으로/뒤로 갈 수 없다면 Alert으로 에러를 띄우도록 구현했다. 
+    사용자가 버튼을 눌렀는데 아무런 반응 없이 기능이 동작하지 않는다면 안 좋을 것이니, Alert으로 에러 내용을 표시하면 되겠다는 생각이었다  
 - [코드리뷰 코멘트](https://github.com/yagom-academy/ios-web-browser/pull/20#discussion_r521734482)
     > 사용자에게 알림을 주는 것은 좋지만, 무분별한 얼럿 사용은 오히려 사용자 경험을 해칠 수 있습니다.
     > 적절한 피드백을 고민해봐야합니다.
     > 앞으로 갈 수 없는 상황이라면 앞으로가기 버튼을 비활성화 하는 것만으로도 충분한 피드백이 되지 않을까요?
-
 - 개선
-    - 코멘트의 방식이 적절하겠다고 판단했다
-    - 웹페이지 이동을 완료할 때마다 앞으로/뒤로 갈 수 있는지 체크하고 갈 수 없다면 버튼을 비활성화 되도록 구현
+    코멘트의 방식이 적절하겠다고 판단하여,
+    웹페이지 이동을 완료할 때마다 앞으로/뒤로 갈 수 있는지 체크하여, 갈 수 있으면 버튼을 활성화하고, 아니면 비활성화했다.
     ~~~swift 
     extension ViewController: WKNavigationDelegate {
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -255,8 +253,8 @@ func openPage(url: String) {
     }
     ~~~
 - 배운 점
-    - Alert 사용은 꼭 필요할 때만
-    - H.I.G 문서를 읽어봐야 한다. [Feedback - Alert관련 내용](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/feedback/)
+    - Alert은 꼭 필요할 때만 사용해야 한다.
+    - H.I.G 문서는 매우 중요하다! [Feedback - Alert관련 내용](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/feedback/)
 
 <br>
 
