@@ -14,6 +14,7 @@
 | :----------------: | :----------------------: | :----------------------: | :---------------------: |
 | ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
 
+<br><br><br>
 
 ## 목차
 
@@ -191,6 +192,9 @@ func showError(error: ErrorMessage) {
     > **Developer Document > URL > init(string:)**  
     > This initializer returns nil if the string doesn’t represent a valid URL. For example, an empty string or one containing characters that are illegal in a URL produces nil.
 
+[👆목차로 가기](#목차)
+<br><br><br>
+
 ### 정규식으로 주소에 https 포함됐는지 검사
 
 주소를 입력할 때 `https://`을 붙이지 않고 `naver.com`을 입력한다면 URL 타입 생성이 실패한다.  
@@ -203,7 +207,7 @@ func checkFront(of url: String?) -> Bool {
     return NSPredicate(format: "SELF MATCHES %@", urlRegex).evaluate(with: url)
 }
 ~~~
-> 이 기능은 팀원 `Lina`가 구현 후 설명해 주었고, 정규식을 분석하여 정리했다.
+> 이 기능은 팀원 `Lina`가 구현 후 설명해 주었고, 사용된 정규식 내용을 정리했다.
 - 메타 문자: 정규식에서 일정한 의미를 가지고 쓰는 특수문자
 - `http|https`: 메타 문자 `|`는 `or`을 의미하므로 `http 또는 https`를 의미
 - `((http|https)://)`: 메타 문자 `()`는 서브 패턴을 지정하므로, `http:// 또는 https://`를 의미
