@@ -70,9 +70,10 @@
 
 입력받을 콘텐츠에 맞는 Keyboard Type을 설정하면 사용자가 더 편리해할 것이므로 꼭 하자.  
 (핸드폰 번호를 입력하는 Text Field라면 문자는 불필요하므로 숫자패드가 보이면 더 누르기 쉬울 것이다.)
+![](./Images/TextField_KeyboardType.png)
 - [H.I.G - Text Fields 읽어보기](https://developer.apple.com/design/human-interface-guidelines/ios/controls/text-fields/)
 - 스토리보드에서 Text Field 선택 후 Attributes Inspector -> Text Input Traits -> Keyboard Type에서 설정
-- 웹 주소를 입력받으므로 `URL`Type으로 설정했다.
+- 웹 주소를 입력받으므로 `URL` Type으로 설정하니, 키보드의 `.`, `/`, `.com`등 URL 작성에 유용하게 배치됐다.
 
 ### Alert 표시하기
 
@@ -192,7 +193,7 @@ func checkFront(of url: String?) -> Bool {
     return NSPredicate(format: "SELF MATCHES %@", urlRegex).evaluate(with: url)
 }
 ~~~
-> 이 기능은 팀원 `Lina`가 구현 후 나에게 설명해 주었다.
+> 이 기능은 팀원 `Lina`가 구현 후 설명해 주었고, 정규식을 분석하여 정리했다.
 - 메타 문자: 정규식에서 일정한 의미를 가지고 쓰는 특수문자
 - `http|https`: 메타 문자 `|`는 `or`을 의미하므로 `http 또는 https`를 의미
 - `((http|https)://)`: 메타 문자 `()`는 서브 패턴을 지정하므로, `http:// 또는 https://`를 의미
