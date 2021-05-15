@@ -2,10 +2,22 @@
 <!-- 뱃지 라인 -->
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FKyungminLeeDev%2FiOS_Web_Browser&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
+## 개요
+
+- Webkit으로 구현한 웹 브라우저 앱
+- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md), [`TWL`](./TWL.md)
+- 진행 기간: 2020.11.09~15 (1주)
+- 학습 Keyword: `Text Field`, `Alert`, `Web View`, `Toolbar`, `Button`, `URL`, `정규식`
+- 기능
+
+| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로 고침 | 
+| :----------------: | :----------------------: | :----------------------: | :---------------------: |
+| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
+
+
 ## 목차
 
-1. [개요](#1-개요)
-2. [학습 내용](#2-학습-내용)
+1. [학습 내용](#1-학습-내용)
     - [Text Field](#Text-Field)
         - [텍스트 입력받고 사용하기](#텍스트-입력받고-사용하기)
         - [Keyboard Type 설정하기](#Keyboard-Type-설정하기)
@@ -16,34 +28,17 @@
     - [Toolbar or Tab Bar?](#Toolbar-or-Tab-Bar)
     - [String을 URL 타입으로 변환하기](#String을-URL-타입으로-변환하기)
     - [정규식으로 주소에 https 포함했는지 검사](#정규식으로-주소에-https-포함됐는지-검사)
-3. [배운 내용](#배운-내용)
+2. [배운 내용](#2-배운-내용)
     - [메서드의 확장성 고려하기](#메서드의-확장성-고려하기)
     - [Alert은 꼭 필요할 때 사용하기](#Alert은-꼭-필요할-때-사용하기)
-4. [고민한 내용](#고민한-내용)
+3. [고민한 내용](#3-고민한-내용)
     - [메서드의 재사용성](#메서드의-재사용성)
     - [사용자가 이동 버튼을 여러 번 다시 누를 경우](#사용자가-이동-버튼을-여러-번-다시-누를-경우)
-5. [개선하고 싶은 내용](#개선하고-싶은-내용)
+4. [개선하고 싶은 내용](#4-개선하고-싶은-내용)
 
 <br><br><br>
 
-## 1. 개요
-
-- Webkit으로 구현한 웹 브라우저 앱
-- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322), [`팀 그라운드 룰`](./GroundRule.md), [`TWL`](./TWL.md)
-- 진행 기간: 2020.11.09~15 (1주)
-- 학습 Keyword: `Web View` `Toolbar` `Button` `Text Field` `Alert`
-- 기능
-
-| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로 고침 | 
-| :----------------: | :----------------------: | :----------------------: | :---------------------: |
-| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
-
-<br>
-
-[👆목차로 가기](#목차)
-<br><br><br>
-
-## 2. 학습 내용
+## 1. 학습 내용
 
 ### Text Field
 
@@ -205,7 +200,7 @@ func checkFront(of url: String?) -> Bool {
 
 
 
-## 배운 내용
+## 2. 배운 내용
 
 ### 메서드의 확장성 고려하기
 
@@ -260,7 +255,7 @@ func checkFront(of url: String?) -> Bool {
 
 
 
-## 고민한 내용
+## 3. 고민한 내용
 
 ### 메서드의 재사용성
 
@@ -279,7 +274,8 @@ func checkFront(of url: String?) -> Bool {
 ### 사용자가 이동 버튼을 여러 번 다시 누를 경우
 
 - 배경
-    입력한 URL로 Web View를 이동하는 메서드를 구현했다.
+    입력한 URL로 Web View를 이동하는 메서드를 구현했다.  
+    만약 사용자가 이동 버튼을 여러번 다시 눌러서 메서드가 계속 실행된다면?
 - 고민의 흐름
     1. 사용자가 이동 버튼을 연속해서 계속 누른다면 웹 페이지 로딩이 끝나기 전에 계속 재시도할 것이다.  
         이것은 사용자 데이터를 불필하게 더 소모하는 것이니 막는 것이 좋겠다.  
@@ -301,7 +297,7 @@ func checkFront(of url: String?) -> Bool {
         > webView가 _www.naver.com_를 요청하고 로딩 중에  
         > www.yagom.net 을 입력하면 뒤에 요청된 www.yagom.net 이 무시되야하나요?  
     만약 인터넷 속도가 매우 느린 상황이라면 유저는 다른 페이지로 이동하고 싶지만 버튼을 눌러도 이동하지 못하는 상황이 발생할 것이다.
-- 결론
+- 결론  
     사파리 앱의 경우에는 별다른 대응 없이 계속 새로 요청이 되었다.  
     다른 방법으로 새로 요청한 주소가 직전에 입력한 주소와 같다면 무시하는 방법이 생각났지만,  
     프로젝트 기능 명세서에 해당 내용은 없으므로 우선은 매번 새로 요청되도록 하고, 차후 시간 여유가 있다면 적용해보기로 했다.  
@@ -326,7 +322,7 @@ func checkFront(of url: String?) -> Bool {
 
 
 
-## 개선하고 싶은 내용
+## 3. 개선하고 싶은 내용
 
 - 뒤로 가기, 앞으로 가기, 새로 고침 기능을 Webkit 메서드를 사용하지 않고 구현해보기
 - 상/하단의 Bar가 항상 보이고 있어서 웹 뷰 영역이 비좁아 보인다. 사파리 앱처럼 아래로 스크롤 시에 상/하단 Bar를 최소화하고, 위로 스크롤 시에 다시 보이게 하기
