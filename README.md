@@ -2,23 +2,15 @@
 <!-- 뱃지 라인 -->
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FKyungminLeeDev%2FiOS_Web_Browser&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-## 개요
+| 📺 데모 | 💡 개요 |
+| ------- | ------- |
+| <img src = ./Images/WebBrowser_Demo.gif width="250px"> | 🚀 Webkit으로 구현한 웹 브라우저 앱 <br> 🧑🏻‍💻 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322) <br> 🗓 진행 기간: 2020.11.09~15 (1주) <br> ⚙️ 기능 <br> &nbsp;&nbsp;&nbsp;&nbsp; `입력한 주소로 이동` <br> &nbsp;&nbsp;&nbsp;&nbsp; `잘못된 주소는 Alert 표시` <br> &nbsp;&nbsp;&nbsp;&nbsp; `주소에 "https://" 붙이기` <br> &nbsp;&nbsp;&nbsp;&nbsp; `앞/뒤로 가기, 새로 고침` <br> 📝 학습 키워드 <br> &nbsp;&nbsp;&nbsp;&nbsp; `Text Field` <br> &nbsp;&nbsp;&nbsp;&nbsp; `Alert` <br> &nbsp;&nbsp;&nbsp;&nbsp; `Web View` <br> &nbsp;&nbsp;&nbsp;&nbsp; `Toolbar` <br> &nbsp;&nbsp;&nbsp;&nbsp; `Button` <br> &nbsp;&nbsp;&nbsp;&nbsp; `URL` <br> &nbsp;&nbsp;&nbsp;&nbsp; `정규식` |
 
-- Webkit으로 구현한 웹 브라우저 앱
-- 팀 프로젝트: `Jacob`, [`Lina`](https://github.com/lina0322)
-- 진행 기간: 2020.11.09~15 (1주)
-- 학습 Keyword: `Text Field`, `Alert`, `Web View`, `Toolbar`, `Button`, `URL`, `정규식`
-- 기능
-
-| 입력한 주소로 이동 | 잘못된 주소는 Alert 표시 | 주소에 "https://" 붙이기 | 앞/뒤로 가기, 새로 고침 | 
-| :----------------: | :----------------------: | :----------------------: | :---------------------: |
-| ![](./Images/MoveToURL.gif) | ![](./Images/WrongURL.gif) | ![](./Images/AutoURL.gif) | ![](./Images/ForwardBackReload.gif) |
-
-<br><br><br>
 
 ## 목차
 
 1. [프로젝트](#프로젝트)
+    - [기능](#기능)
     - [팀원과 역할 분배](#팀원과-역할-분배)
     - [Git & GitHub으로 협업하기](#Git--GitHub으로-협업하기)
     - [팀 그라운드 룰](#팀-그라운드-룰)
@@ -49,6 +41,18 @@
 
 - Webkit으로 구현한 웹 브라우저 앱
 - 진행 기간: 2020.11.09~15 (1주)
+
+### 기능
+
+| 📺 데모 |  🗓 기능 |
+| ------- | -------- |
+| <img src = ./Images/MoveToURL.gif width="250px"> | **입력한 주소로 이동** <br><br> 1. 주소 `Text Field`를 터치하면 문자 입력을 위한 키보드가 올라온다 <br> 2. 주소 입력 후 `이동` 버튼을 누르면 해당 주소로 이동한다 |
+| <img src = ./Images/WrongURL.gif width="250px"> | **잘못된 주소는 Alert 표시** <br><br> 입력한 주소가 유효하지 않으면 `Alert` 으로 사용자에게 알려준다 |
+| <img src = ./Images/AutoURL.gif width="250px"> | **주소에 "https://" 붙이기** <br><br> 주소에 `https://`를 입력하지 않았으면 자동으로 붙여준다 |
+| <img src = ./Images/ForwardBackReload.gif width="250px"> | **앞/뒤로 가기, 새로 고침** <br><br> 툴바의 앞으로 가기, 뒤로가기, 새로고침 버튼으로 해당 기능을 사용한다 |
+
+[👆목차로 가기](#목차)
+<br><br><br>
 
 ### 팀원과 역할 분배
 
@@ -152,22 +156,14 @@ Feat : 로그인 기능 추가
 
 다음 프로젝트에서는 적당히 밸런스를 맞추는 연습을 더 해야겠다. 
 
-#### 학습 키워드 
-
-- WKWebView 
-- Delegate 
-- Optional 
-- WKNavigationDelegate 
-- 정규식 
-
 #### 칭찬하기 
 
 - **제이콥이 리나에게**  
-    다양한 방법으로 시도하려는 노력을 많이 해서 내가 생각하지 못한 방법들을 자주 발견해 주어 배운 것이 많았다. 나는 한 가지 방식에 생각이 꽂히면 그길로만 파고드는 스타일인데 그럴 때 단점을 보완해주는 팀원이었다.
+    다양한 방법으로 시도하려는 노력을 많이 해서 내가 생각하지 못한 방법들을 자주 발견해 주어 배운 것이 많았다. 나는 한 가지 방식에 생각이 꽂히면 그길로만 파고드는 스타일인데 그럴 때 단점을 보완해 주는 팀원이었다.
 
 - **리나가 제이콥에게**  
-    항상 침착한 제이콥과 함께해서 좋았습니다! 어려워서 제 멘탈이 왔다 갔다 하는데도, 침착하게 리드해주는 느낌이었습니다. 제가 이해하지 못하는게 있어도, 여러 차례 다시 설명해 주고 보여주고 이해할 때까지 기다려줘서 감동이었습니다.
-    제가 무언가를 시도하려고 할 때에도, 넓은 포옹력으로 지켜봐 주고, 보완해주고, 받아주는 제이콥 최고예요
+    항상 침착한 제이콥과 함께해서 좋았습니다! 어려워서 제 멘탈이 왔다 갔다 하는데도, 침착하게 리드해 주는 느낌이었습니다. 제가 이해하지 못하는 게 있어도, 여러 차례 다시 설명해 주고 보여주고 이해할 때까지 기다려줘서 감동이었습니다.
+    제가 무언가를 시도하려고 할 때에도, 넓은 포옹력으로 지켜봐 주고, 보완해 주고, 받아주는 제이콥 최고예요
     한 주 동안 고생하셨고, 감사합니당
 
 [👆목차로 가기](#목차)
